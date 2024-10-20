@@ -14,8 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - uses: actions/upload-artifact@v3
+     # Assuming you want to upload hello.py after it was used in the test
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: hello
-          path: .
+          name: hello-artifact  # The name of the artifact
+          path: hello.py        # Path to the specific file to upload
         
